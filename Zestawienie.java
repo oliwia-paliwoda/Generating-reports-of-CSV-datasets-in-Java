@@ -120,24 +120,6 @@ public class Zestawienie {
              System.out.format("%-13s %-13s %-7s %-7s %-7s %-7s %-7s %-13s %-13s %-17s\n", z.NrKarty, z.DataD, z.Kod, z.Masa, z.Jedn, z.Firma, z.Typ, z.Nazwa_Skrocona, z.Nr_Mag, z.Opis);
          }
     }
-  
-    public static void sumMasa(ArrayList<Zestawienie> zestawienie) {
-        HashMap<Pair<String, String>, Float> sumMasa = new HashMap<>();
-        for (Zestawienie z : zestawienie) {
-            Pair<String, String> key = new Pair<>(z.getKod(), z.getFirma());
-            if (sumMasa.containsKey(key)) {
-                float masa = sumMasa.get(key);
-                sumMasa.put(key, masa + z.getMasa());
-            } else 
-                sumMasa.put(key, z.getMasa());
-            
-        }
-
-        for (Pair<String, String> key : sumMasa.keySet()) {
-            System.out.println("Kod: " + key.getKey() + " Firma: " + key.getValue() + " Suma mas: " + sumMasa.get(key));
-        }
-    }
-
 
        
     @Override
